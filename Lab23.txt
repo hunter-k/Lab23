@@ -1,0 +1,39 @@
+//1
+	SELECT * FROM Customers;
+//2
+	SELECT country FROM customers;
+//3
+	SELECT * FROM customers WHERE customerid LIKE 'BL%';
+//4
+	SELECT * FROM orders LIMIT 100;
+//5
+	SELECT * FROM customers WHERE postalcode IN ('1010', '3012', '12209', '05023');
+//6
+	SELECT * FROM orders WHERE ShipRegion IS NOT NULL;
+//7
+	SELECT * FROM customers ORDER BY country, city;
+//8
+	INSERT INTO customers VALUES ('SNFLD', 'Vandaley Industries', 'George Constanza', 'President', '123 Fake St.', 'New York', 'NY', '123456', 'USA', '212-123-4567', '');
+//9
+	update orders set ShipRegion='EuroZone' where ShipCountry='France';
+//10
+	DELETE FROM order_details WHERE quantity=1;
+//11
+	SELECT AVG(quantity) FROM order_details;
+	SELECT MAX(quantity) FROM order_details;
+	SELECT AVG(quantity) FROM order_details;
+//12
+	SELECT AVG(quantity) FROM order_details GROUP BY orderid;
+	SELECT MAX(quantity) FROM order_details GROUP BY orderid;
+	SELECT MIN(quantity) FROM order_details GROUP BY orderid;
+//13
+	SELECT * FROM orders WHERE orderid=10290;
+//14
+	SELECT *
+	FROM Orders
+	INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+//15
+	SELECT firstname FROM employees WHERE reportsto IS NULL;
+//16 
+	SELECT firstname FROM employees WHERE reportsto =
+	(SELECT employeeid FROM employees WHERE firstname='Andrew');
